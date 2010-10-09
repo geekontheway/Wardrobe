@@ -1,0 +1,5 @@
+%h1 Login
+%form{:name => "openid_login", :method => "post",  :action=>'/login/openid'}
+  Your OpenID:
+  %input{:type => 'text', :name => 'openid_identifier'}
+  %input{:type => 'submit', :value => 'Login'}

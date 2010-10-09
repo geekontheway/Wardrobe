@@ -1,0 +1,31 @@
+%html
+  %head
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
+    :javascript
+      jQuery(document).ready(function($) {
+
+      });
+
+  %body
+    %h1 Upload to Wardrobe
+    %br/
+    %br/
+
+    %form{:name => "file_form",:action => "create", :method=>"post",:enctype=>"multipart/form-data"}
+      %input{:type => "file", :name => "file"}
+      %br/
+      Category:
+      %select{:name => "category", :value => "category"}
+        %option{:value => "documents"} Documents
+        %option{:value => "music"} Music
+        %option{:value => "books" } Books
+        %option{:value => "video"} Video
+        %option{:value => "other"} Other
+      %br/
+      %p Description:
+      %textarea{:rows => 5, :cols => 40, :name => "description"}
+      %br/
+      %p Tags (comma delimited)
+      %input{:type => "text", :name => "tags"}
+      %br/
+      %input{:type => "submit", :value => "Submit"}

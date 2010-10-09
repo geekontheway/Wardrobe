@@ -1,0 +1,33 @@
+%html
+  %head
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
+    :javascript
+      jQuery(document).ready(function($) {
+
+      });
+
+  %body
+    %h1 Wardrobe, an over-the-top file sharing app
+    %br/
+    %br/
+    %a{:href => "new" } upload a file
+    %br/
+    %br/
+    %form{:name => "search_form", :action => "search", :method => "get",:enctype=>"multipart/form-data"}
+      Search Files:
+      %input{:type => "text", "name" => "keyword"}
+      %br/
+      %input{:type => "submit", :value => "Submit" }
+
+    %table
+      %tr
+        %td File Name
+        %td Category
+        %td
+      - @files.each do |file|
+        %tr
+          %td= file["filename"]
+          %td= file["metadata"]["category"]
+          %td
+            %a{ :href=> '/file/'+file["_id"].to_s} view details
+    %br/      

@@ -1,0 +1,16 @@
+%table
+  %tr
+    %td File name
+    %td Uploaded by
+    %td Category
+    %td Description
+    %td Size (MB)
+    %td
+  %tr
+    %td= @file["filename"]
+    %td= @file["metadata"]["uploaded_by"]
+    %td= @file["metadata"]["category"]
+    %td= @file["metadata"]["description"]
+    %td= (@file["length"]/1024) /1024
+    %td
+      %a{:href => '/download/'+@file["_id"].to_s} download

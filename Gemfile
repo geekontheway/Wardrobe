@@ -2,6 +2,7 @@ source :gemcutter
 
 
 group :app do
+gem 'goliath'
 gem 'sinatra'
 gem 'haml'
 gem 'mongo'
@@ -12,12 +13,9 @@ gem 'ruby-openid'
 gem 'rack-flash'
 end
 
-group :daemon do
-gem 'eventmachine'
-gem 'em-websocket'
-end
+
 
 group :test do
-  gem 'rspec', '2.0.0.rc'
+  gem 'rspec'
   gem 'rack-test'
 end
